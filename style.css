@@ -1,0 +1,222 @@
+/* --- 1. GLOBAL STYLES & RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #000; /* Set to black so the particles pop! */
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 2. NAVIGATION --- */
+header {
+    background: rgba(0, 0, 0, 0.9); /* Slight transparency */
+    color: #fff;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 180, 0, 0.3);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffb400;
+}
+
+/* --- 3. HERO SECTION --- */
+#hero {
+    height: 85vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/Hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content span {
+    color: #ffb400;
+}
+
+.btn {
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 10px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.primary-btn { background: #ffb400; color: #000; }
+.secondary-btn { border: 2px solid #fff; color: #fff; }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255, 180, 0, 0.4); }
+
+/* --- 4. STATS BAR --- */
+#stats {
+    background: rgba(26, 26, 26, 0.9);
+    color: #fff;
+    padding: 60px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.stat-box h2 {
+    font-size: 2.8rem;
+    color: #ffb400;
+}
+
+/* --- 5. SECTION WRAPPING (For Particles) --- */
+section {
+    position: relative;
+    z-index: 1; /* Ensures text stays above particles */
+}
+
+/* --- 6. ABOUT SECTION --- */
+#about {
+    padding: 100px 0;
+    background: rgba(255, 255, 255, 0.85); /* Let particles peek through */
+}
+
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.about-text { flex: 1; min-width: 300px; }
+.about-image { flex: 1; min-width: 300px; text-align: center; }
+.about-image img { max-width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+
+.badge {
+    background: #ffb400;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* --- 7. SERVICES SECTION --- */
+.bg-light { 
+    background: rgba(249, 249, 249, 0.85); 
+    padding: 100px 0; 
+}
+
+.section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; position: relative; }
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #ffb400;
+    margin: 10px auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.service-card:hover { transform: translateY(-10px); }
+.service-card img { width: 100%; height: 250px; object-fit: cover; }
+.service-card h3 { margin: 20px 0; }
+.service-card p { padding: 0 20px 30px; font-size: 0.95rem; }
+
+/* --- 8. GALLERY --- */
+#gallery { padding: 100px 0; background: rgba(255, 255, 255, 0.85); }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.gallery-grid img:hover { transform: scale(1.02); }
+
+/* --- 9. FOOTER --- */
+footer {
+    background: rgba(0, 0, 0, 0.95);
+    color: #fff;
+    padding: 80px 0 30px;
+    text-align: center;
+}
+
+.footer-content h2 { color: #ffb400; margin-bottom: 15px; }
+
+/* --- 10. MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2.2rem; }
+    .nav-links { display: none; } /* Standard for a simple landing page */
+    .stat-box h2 { font-size: 2rem; }
+    .gallery-grid { grid-template-columns: 1fr; }
+}
